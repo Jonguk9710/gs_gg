@@ -13,6 +13,10 @@ export default {
         commonUtils.checkLog("페이지 시작 테스트");
         //mixin 예시
         this.mixinSample("믹스인샘플");
+
+        //main.js에 전역으로 axios 등록해놓음.
+        this.$axios.get('https://my-json-server.typicode.com/typicode/demo/posts')
+            .then((response)=>console.log(response.data));
     }
 
 }

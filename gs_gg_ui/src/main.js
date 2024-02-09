@@ -1,9 +1,10 @@
 import { createApp, defineAsyncComponent } from 'vue'
 import App from './App.vue'
 import router from "@/js/router"
+import axios from 'axios';
 
 const app = createApp(App);
-const COMMON_COMPONENTS=['EpInput']
+const COMMON_COMPONENTS=['EpInput'];
 
 function loadComponents(){
 
@@ -15,6 +16,9 @@ function loadComponents(){
         );
     }
 }
+
+//라이브러리 전역 변수 등록
+app.config.globalProperties.$axios=axios;
 
 loadComponents();
 app.use(router);
