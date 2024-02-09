@@ -10,6 +10,7 @@ function loadComponents(){
     for (let component of COMMON_COMPONENTS){
         app.component(
           component,
+          //동적import
           defineAsyncComponent(() => import(`@/components/${component}.vue`))
         );
     }

@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+    //공통컴포넌트만 리스트형으로 받기
     props:['label','size'],
     data(){
         return{

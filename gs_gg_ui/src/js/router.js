@@ -6,12 +6,14 @@ import menus from "./menu/menus";
 const mainRoutes= [];
 // loadRoutes(menus);
 
+
+//https://developer.mozilla.org/ko/docs/Glossary/IIFE
 (function loadRoutes(menus){
   for(let menu of menus){
     menu.component = () => import(`@/views/${menu.path}.vue`);
     mainRoutes.push(menu);
   }
-})(menus);//IIFE
+})(menus);
 
 const routes = [
   {
