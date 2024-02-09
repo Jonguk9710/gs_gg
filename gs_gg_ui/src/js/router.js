@@ -27,7 +27,6 @@ const routes = [
 
 
 //로그인 확인 여부 : 네비게이션 가드 필요
-
 const router = createRouter({
   history: createWebHistory(),
   routes,
