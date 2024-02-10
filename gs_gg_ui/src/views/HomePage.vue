@@ -11,11 +11,21 @@
         </keep-alive>
     </router-view>
     <EpInput label='검색'></EpInput>
+    <button @click="test">button</button>
 </template>
 <script>
+import axios from 'axios';
+
+
 
 export default {
-
+    methods: {
+        test() {
+            console.log('axios start');
+            axios.get("/api")
+                .then(res => console.log(res))
+        }
+    }
 }
 </script>
 <style>
