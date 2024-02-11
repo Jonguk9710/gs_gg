@@ -1,17 +1,16 @@
-.DS_Store
-node_modules
+# .gitignore
+
+### Vue.js ###
+# Node.js dependencies
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Compiled output
 /dist
 
-
-# local env files
+# Local environment file
 .env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
 # Editor directories and files
 .idea
@@ -20,4 +19,24 @@ pnpm-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+### Spring Boot ###
+# Compiled class file
+/target/
+
+# Logs
+/logs/
+
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Spring Boot
+mvnw
+mvnw.cmd
