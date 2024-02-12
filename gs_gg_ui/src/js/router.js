@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "@/views/HomePage.vue";
+// import HomePage from "@/views/HomePage.vue";
+import CharactersPage from "@/views/characters/CharactersPage.vue";
+import TestPage from "@/views/test/TestPage.vue";
 import menus from "./menu/menus";
 
 
@@ -19,8 +21,15 @@ const routes = [
   {
     path: "/",
     name: "/",
-    component:HomePage,
+    component:TestPage,
     children:mainRoutes,// Hompage 주소 '/'를 고정값으로 가지고 있는다
+  },
+
+  //케릭터 소개 페이지
+  {
+    path: "/characters",
+    name: "/characters",
+    component:CharactersPage,
   },
 
 ];
