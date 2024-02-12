@@ -1,7 +1,7 @@
 <template lang="">
     <!-- header 및 logo -->
     <div class="header">
-        <h1>GS.GG</h1>
+        <h1 @click="goToMainPage">GS.GG</h1>
     </div>
 
     <!-- 메인 탭 버튼 -->
@@ -36,6 +36,11 @@ export default {
 
     //methods
     methods: {
+        //헤더 GS.GG 클릭 시 Main 화면으로 이동
+        goToMainPage() {
+            this.$router.push({ path: '/'});
+        },
+
         //메인 탭 클릭시 component change 이벤트
         componentChg(idNum){
             this.$router.push(this.arrTabBtns[idNum].pagePath);
@@ -80,6 +85,7 @@ export default {
     height:100px;
     background: black;
     color:white;
+    cursor: pointer;
 }
 .search{
     display:flex;
