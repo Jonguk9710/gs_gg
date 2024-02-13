@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-// import HomePage from "@/views/HomePage.vue";
-import CharactersPage from "@/views/characters/CharactersPage.vue";
-import RecordsPage from "@/views/records/RecordsPage.vue";
+import HomePage from "@/views/HomePage.vue";
+// import CharactersPage from "@/views/characters/CharactersPage.vue";
+// import RecordsPage from "@/views/records/RecordsPage.vue";
 import menus from "./menu/menus";
 
 
@@ -12,27 +12,38 @@ const mainRoutes= [];
 //https://developer.mozilla.org/ko/docs/Glossary/IIFE
 (function loadRoutes(menus){
   for(let menu of menus){
-    menu.component = () => import(`@/views/${menu.path}.vue`);
+    menu.component = () => import(`@/views/${menu.componentPath}.vue`);
     mainRoutes.push(menu);
   }
 })(menus);
+
+// const routes = [
+//   //전적 검색 페이지
+//   {
+//     path: "/",
+//     name: "/",
+//     component:RecordsPage,
+//     children:mainRoutes,// Hompage 주소 '/'를 고정값으로 가지고 있는다
+//   },
+
+//   //케릭터 소개 페이지
+//   {
+//     path: "/characters",
+//     name: "/characters",
+//     component:CharactersPage,
+//   },
+
+// ];
+
 
 const routes = [
   //전적 검색 페이지
   {
     path: "/",
     name: "/",
-    component:RecordsPage,
-    children:mainRoutes,// Hompage 주소 '/'를 고정값으로 가지고 있는다
+    component: HomePage,
+    children: mainRoutes, // Hompage 주소 '/'를 고정값으로 가지고 있는다
   },
-
-  //케릭터 소개 페이지
-  {
-    path: "/characters",
-    name: "/characters",
-    component:CharactersPage,
-  },
-
 ];
 
 

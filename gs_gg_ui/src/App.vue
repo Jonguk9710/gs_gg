@@ -1,15 +1,16 @@
 <template>
-  <home-page/>
+  <!-- <home-page/> -->
+  <router-view></router-view>
 </template>
 
 <script>
-import HomePage from './views/HomePage.vue';
+// import HomePage from './views/HomePage.vue';
 
 
 export default {
   name: 'App',
   components: {
-    HomePage
+    // HomePage
   }
 }
 </script>
