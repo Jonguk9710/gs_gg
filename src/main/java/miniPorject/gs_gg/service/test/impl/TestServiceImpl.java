@@ -13,7 +13,7 @@ import java.util.Map;
 @Repository
 public class TestServiceImpl implements TestService {
 
-    @Autowired
+    @Autowired(required = false)
     TestDAO testDAO;
 // private final TestDAO testDAO;
 
