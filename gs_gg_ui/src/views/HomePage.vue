@@ -5,8 +5,10 @@
     </div>
 
     <!-- 메인 탭 버튼 -->
-    <div>
-        <TabButtons :arrTabBtns="arrTabBtns" @componentChg="componentChg($event)"/>
+    <div class="tab-btn-grp">
+        <TabButtons v-for="objBtn in arrTabBtns" :key="objBtn"
+        :objBtn="objBtn" 
+        @componentChg="componentChg($event)"/>
     </div>
 
     <!-- test 영역 테스트 후 삭제 예정-->
@@ -70,7 +72,7 @@ export default {
         return {
             //메인 탭
             arrTabBtns: [
-                {id: 0, tabName: "tab1"},
+                {id: 0, tabName: "tab1", pagePath: '/'},
                 {id: 1, tabName: "tab2"},
                 {id: 2, tabName: "tab3"},
                 {id: 3, tabName: "챔피언 소개", pagePath: '/characters'},
@@ -91,4 +93,8 @@ export default {
     display:flex;
     justify-content: flex-end;
 }    
+.tab-btn-grp{
+    display: flex;
+    width: fit-content;
+}
 </style>

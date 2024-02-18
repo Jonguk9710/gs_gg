@@ -1,8 +1,9 @@
 <template lang="">
     <div>
         <button class="tabBtn" 
-            v-for="btn in arrTabBtns" :key="btn"
-            @click="componentChg(btn.id)">{{btn.tabName}}</button>
+            @click="componentChg(objBtn.id)">{{objBtn.tabName}}</button>
+
+            <!-- <button @click="console.log(this.objBtn)">{{this.objBtn.tabName}}</button> -->
     </div>
 </template>
 
@@ -20,7 +21,7 @@ export default {
     },
 
     props: {
-        arrTabBtns: Array
+        objBtn: Object
     },
 }
 </script>
